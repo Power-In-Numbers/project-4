@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="project4"
-run/main_scene="uid://ul152tja1nqq"
+run/main_scene="uid://cci2a7t8w3g45"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 Constants="*uid://dujicftl130x8"
 NetworkHandler="*uid://bnul2h4j2jkaa"
+SceneHandler="*uid://cci2a7t8w3g45"
 
 [display]
 

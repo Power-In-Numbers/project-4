@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cci2a7t8w3g45"]
+
+[ext_resource type="Script" uid="uid://bnm78ff7ftftd" path="res://scenes/scene_handler.gd" id="1_snryc"]
+[ext_resource type="PackedScene" uid="uid://c7v5f8ugq3c1y" path="res://main.tscn" id="2_t2lu8"]
+
+[node name="SceneHandler" type="Node2D" unique_id=733118779]
+script = ExtResource("1_snryc")
+
+[node name="main" parent="." unique_id=336771588 instance=ExtResource("2_t2lu8")]
+visible = false
