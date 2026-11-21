@@ -13,8 +13,10 @@ func play_animation() -> void:
 	await animation_player.animation_finished
 
 func _on_progress_changed(_new_value: float) -> void:
-	pass
+	print(_new_value)
+	$progress.value = _new_value
 
 func _on_load_finished() -> void:
 	animation_player.play_backwards("trans")
 	await animation_player.animation_finished
+	queue_free()
