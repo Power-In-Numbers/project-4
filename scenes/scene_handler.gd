@@ -4,29 +4,33 @@ signal progress_changed(progress)
 signal load_finished
 
 var loading_screen: PackedScene = preload("uid://c18dsrah7aita")
+var current_loading_screen_instance
 var loaded_resource: PackedScene
+var loaded_scene_instance: Node
 var scene_path: String
 var progress: Array = []
 var use_sub_threads: bool = true
+var prior_scene: Node
+
 
 func _ready() -> void:
-	set_process(false)
-	add_child_scene_no_transition("uid://cn31opw5i4ovi")
+	pass
 
-func add_child_scene_no_transition(string_path) -> void:
-	scene_path = string_path
+
+func to_next_scene_no_transition(_scene_path) -> void:
 	start_load()
 
 
-func load_scene(_scene_path: String) -> void:
-	scene_path = _scene_path
-	var new_load_screen = loading_screen.instantiate()
-	add_child(new_load_screen)
-	progress_changed.connect(new_load_screen._on_progress_changed)
-	load_finished.connect(new_load_screen._on_load_finished)
+func transition_to_next_scene(_scene_path: String) -> void:
+	if !current_loading_screen_instance:
+		current_loading_screen_instance = loading_screen.instantiate()
 
-	await new_load_screen.loading_screen_ready
-
+	if not find_child("LoadingScreen"):
+		add_child(current_loading_screen_instance)
+		progress_changed.connect(current_loading_screen_instance._on_progress_changed)
+		load_finished.connect(current_loading_screen_instance._on_load_finished)
+	current_loading_screen_instance.visible = true
+	await current_loading_screen_instance.loading_screen_ready
 	start_load()
 
 func start_load() -> void:
@@ -38,15 +42,28 @@ func _process(_delta:float) -> void:
 	var load_status = ResourceLoader.load_threaded_get_status(scene_path, progress)
 
 	progress_changed.emit(progress[0])
+	$loading.value = progress[0]
 
 	match load_status:
 		ResourceLoader.THREAD_LOAD_INVALID_RESOURCE:
 			set_process(false)
 		ResourceLoader.THREAD_LOAD_LOADED:
 			loaded_resource = ResourceLoader.load_threaded_get(scene_path)
-			load_next_scene()
+			loaded_scene_instance = loaded_resource.instantiate()
+			if find_child(loaded_scene_instance.name):
+				make_next_scene_visible(find_child(loaded_scene_instance.name))
+			else:
+				load_next_scene()
+
+			prior_scene = loaded_scene_instance
+
+func make_next_scene_visible(scene_in_question) -> void:
+	prior_scene.visbile = false
+	scene_in_question.visible = true
 
 func load_next_scene() -> void:
 	var tree: SceneTree = get_tree()
-	add_child(loaded_resource.instantiate())
+	add_child(loaded_scene_instance)
+	if prior_scene:
+		prior_scene.visible = false
 	load_finished.emit()

@@ -6,5 +6,11 @@
 [node name="SceneHandler" type="Node2D" unique_id=733118779]
 script = ExtResource("1_snryc")
 
+[node name="loading" type="ProgressBar" parent="." unique_id=2069965134]
+top_level = true
+z_index = 4
+offset_right = 346.0
+offset_bottom = 27.0
+
 [node name="main" parent="." unique_id=336771588 instance=ExtResource("2_t2lu8")]
 visible = false

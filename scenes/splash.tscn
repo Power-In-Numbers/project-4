@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cn31opw5i4ovi"]
 
-[ext_resource type="Script" uid="uid://bfmvqhndg3reo" path="res://scenes/base_scene.gd" id="1_10vqf"]
+[ext_resource type="Script" uid="uid://jposjq17m0xn" path="res://scenes/splash.gd" id="1_10vqf"]
 [ext_resource type="Texture2D" uid="uid://cq0k55i256j0l" path="res://scenes/power_in_numbers_album_art.png" id="1_86pdq"]
 
 [node name="Splash" type="Node2D" unique_id=1868257220]
