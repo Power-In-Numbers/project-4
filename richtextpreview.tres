@@ -1,0 +1,11 @@
+[gd_resource type="Theme" format=3 uid="uid://drmixb4cxp38j"]
+
+[ext_resource type="FontFile" uid="uid://04506ecbe2sk" path="res://assets/fonts/greekbeartinye.ttf" id="1_tbdfw"]
+
+[resource]
+default_font = ExtResource("1_tbdfw")
+RichTextLabel/fonts/bold_font = ExtResource("1_tbdfw")
+RichTextLabel/fonts/bold_italics_font = ExtResource("1_tbdfw")
+RichTextLabel/fonts/italics_font = ExtResource("1_tbdfw")
+RichTextLabel/fonts/mono_font = ExtResource("1_tbdfw")
+RichTextLabel/fonts/normal_font = ExtResource("1_tbdfw")

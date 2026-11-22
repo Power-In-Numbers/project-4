@@ -1,0 +1,95 @@
+[gd_scene format=3 uid="uid://gttu5nacmbqe"]
+
+[ext_resource type="PackedScene" uid="uid://dw3x6lmfm5wp3" path="res://scenes/card_preview_display.tscn" id="1_lsid1"]
+[ext_resource type="Script" uid="uid://bs0mki23pnpki" path="res://scenes/card_preview.gd" id="1_pcc5x"]
+[ext_resource type="Script" uid="uid://bmw5q61tt02eu" path="res://scenes/tabcontrol.gd" id="2_kwpf4"]
+[ext_resource type="Texture2D" uid="uid://35h1w0b3v805" path="res://assets/BUTTONS/go_back.png" id="5_vmjko"]
+[ext_resource type="FontFile" uid="uid://7ktwd1ksrgaq" path="res://assets/fonts/Gelio Pasteli.ttf" id="15_qnwuq"]
+
+[node name="CardPreview" type="Control" unique_id=1039771972]
+z_index = 5
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_pcc5x")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=14837220]
+layout_mode = 0
+offset_left = 1.0
+offset_right = 1206.0
+offset_bottom = 685.0
+color = Color(0, 0, 0, 0.5529412)
+
+[node name="Control" parent="." unique_id=1952971843 instance=ExtResource("1_lsid1")]
+layout_mode = 0
+offset_right = 456.0
+offset_bottom = 576.0
+
+[node name="tabcontrol" type="TabBar" parent="." unique_id=1090980855]
+z_index = 4
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 499.0
+offset_top = 137.0
+offset_right = -227.0
+offset_bottom = -490.0
+grow_horizontal = 2
+grow_vertical = 2
+current_tab = 0
+tab_count = 3
+tab_0/title = "Lore"
+tab_1/title = "Card Effect"
+tab_2/title = "Nerd Stuff"
+script = ExtResource("2_kwpf4")
+
+[node name="tab_0" type="RichTextLabel" parent="tabcontrol" unique_id=16613738]
+z_index = 4
+layout_mode = 0
+offset_top = 54.0
+offset_right = 469.0
+offset_bottom = 270.0
+text = "testing 1 2 3 "
+
+[node name="tab_1" type="RichTextLabel" parent="tabcontrol" unique_id=451443545]
+visible = false
+z_index = 4
+layout_mode = 0
+offset_top = 54.0
+offset_right = 469.0
+offset_bottom = 270.0
+text = "testing 4 5 6"
+
+[node name="tab_2" type="RichTextLabel" parent="tabcontrol" unique_id=1340718702]
+visible = false
+z_index = 4
+layout_mode = 0
+offset_top = 54.0
+offset_right = 469.0
+offset_bottom = 270.0
+text = "testing 7 8 9"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=883621598]
+layout_mode = 0
+offset_left = 503.0
+offset_top = 77.0
+offset_right = 1126.0
+offset_bottom = 123.0
+theme_override_fonts/normal_font = ExtResource("15_qnwuq")
+theme_override_font_sizes/normal_font_size = 30
+text = "CARD NAME UP HERE AND SUCH - SET 000"
+
+[node name="back" type="TextureButton" parent="." unique_id=1065628648]
+layout_mode = 0
+offset_left = 907.0
+offset_top = 563.0
+offset_right = 1162.0
+offset_bottom = 663.0
+texture_normal = ExtResource("5_vmjko")
+
+[connection signal="tab_clicked" from="tabcontrol" to="tabcontrol" method="_on_tab_clicked"]
+[connection signal="pressed" from="back" to="." method="_on_back_pressed"]

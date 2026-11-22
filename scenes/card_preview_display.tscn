@@ -1,0 +1,236 @@
+[gd_scene format=3 uid="uid://dw3x6lmfm5wp3"]
+
+[ext_resource type="Texture2D" uid="uid://dfc4ab70h7dvb" path="res://assets/cards/modular/Modular_Parts/Background.png" id="1_m2hra"]
+[ext_resource type="Texture2D" uid="uid://bxsimdlyc316h" path="res://assets/cardImages/Texture753.png" id="2_5u75o"]
+[ext_resource type="Texture2D" uid="uid://dcqq8cgll6ews" path="res://assets/cards/modular/Modular_Parts/Base.png" id="3_v5dln"]
+[ext_resource type="Texture2D" uid="uid://bqw80mx8sk1on" path="res://assets/cards/modular/Modular_Parts/Circle_1.png" id="4_1svsg"]
+[ext_resource type="LabelSettings" uid="uid://buwh4p3ds7d6g" path="res://card_preview_text.tres" id="5_ssjc6"]
+[ext_resource type="Texture2D" uid="uid://d2vvd7ejogwhu" path="res://assets/cards/modular/Modular_Parts/Circle_2.png" id="6_2mkhi"]
+[ext_resource type="Texture2D" uid="uid://brbm6ieqyvgms" path="res://assets/cards/modular/Modular_Parts/Circle_3.png" id="7_nhnjb"]
+[ext_resource type="Texture2D" uid="uid://cwloyugv12mly" path="res://assets/cards/modular/Modular_Parts/Description.png" id="8_la1lo"]
+[ext_resource type="Theme" uid="uid://drmixb4cxp38j" path="res://richtextpreview.tres" id="9_1nhx0"]
+[ext_resource type="Texture2D" uid="uid://dfpgnnlbbdqwc" path="res://assets/cards/modular/Modular_Parts/Outline_1.png" id="10_5abdo"]
+[ext_resource type="Texture2D" uid="uid://cokpnu8mnvxja" path="res://assets/cards/modular/Modular_Parts/Outline_2.png" id="11_vfr5b"]
+[ext_resource type="Texture2D" uid="uid://bl5j170yhxyld" path="res://assets/cards/modular/Modular_Parts/Outline_3.png" id="12_nu4u0"]
+[ext_resource type="Texture2D" uid="uid://nuo0sg46lyp4" path="res://assets/cards/modular/Modular_Parts/Title_1.png" id="13_r14de"]
+[ext_resource type="Texture2D" uid="uid://mne4000bq5bo" path="res://assets/cards/modular/Modular_Parts/Title_2.png" id="14_pithx"]
+
+[sub_resource type="Theme" id="Theme_b07mk"]
+
+[node name="Control" type="CenterContainer" unique_id=1952971843]
+texture_filter = 5
+custom_minimum_size = Vector2(456, 576)
+offset_right = 228.0
+offset_bottom = 288.0
+size_flags_vertical = 4
+
+[node name="Background" type="TextureRect" parent="." unique_id=399215513]
+clip_children = 1
+texture_filter = 5
+custom_minimum_size = Vector2(456, 576)
+layout_mode = 2
+texture = ExtResource("1_m2hra")
+
+[node name="color" type="ColorRect" parent="Background" unique_id=860637041]
+texture_filter = 5
+layout_mode = 0
+offset_right = 450.0
+offset_bottom = 557.0
+mouse_filter = 1
+color = Color(0, 0, 0, 1)
+
+[node name="image" type="TextureRect" parent="Background" unique_id=1843124842]
+texture_filter = 5
+layout_mode = 0
+offset_left = 66.0
+offset_top = -40.0
+offset_right = 389.0
+offset_bottom = 535.0
+texture = ExtResource("2_5u75o")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Base" type="TextureRect" parent="." unique_id=1080563087]
+clip_children = 1
+texture_filter = 5
+custom_minimum_size = Vector2(456, 576)
+layout_mode = 2
+texture = ExtResource("3_v5dln")
+
+[node name="color" type="ColorRect" parent="Base" unique_id=1495159412]
+layout_mode = 0
+offset_right = 450.0
+offset_bottom = 589.0
+color = Color(0.60784316, 0.039215688, 0, 1)
+
+[node name="Logos" type="TextureRect" parent="." unique_id=2018946948]
+clip_children = 1
+texture_filter = 5
+custom_minimum_size = Vector2(456, 576)
+layout_mode = 2
+texture = ExtResource("4_1svsg")
+
+[node name="text" type="Label" parent="Logos" unique_id=1847534374]
+z_index = 1
+texture_filter = 5
+layout_mode = 0
+offset_left = 345.0
+offset_top = 38.0
+offset_right = 381.0
+offset_bottom = 80.0
+text = "10"
+label_settings = ExtResource("5_ssjc6")
+
+[node name="color" type="ColorRect" parent="Logos" unique_id=571648561]
+layout_mode = 0
+offset_left = 1.0
+offset_right = 400.0
+offset_bottom = 548.0
+color = Color(0.105882354, 0.96862745, 0.078431375, 1)
+
+[node name="Circle2" type="TextureRect" parent="." unique_id=199803936]
+visible = false
+clip_children = 1
+texture_filter = 5
+custom_minimum_size = Vector2(456, 576)
+layout_mode = 2
+texture = ExtResource("6_2mkhi")
+
+[node name="color" type="ColorRect" parent="Circle2" unique_id=2018284340]
+layout_mode = 0
+offset_right = 400.0
+offset_bottom = 400.0
+color = Color(0.105882354, 0.84705883, 0.078431375, 1)
+
+[node name="Ethos" type="TextureRect" parent="." unique_id=1912631154]
+clip_children = 1
+texture_filter = 5
+custom_minimum_size = Vector2(456, 576)
+layout_mode = 2
+texture = ExtResource("7_nhnjb")
+
+[node name="text" type="Label" parent="Ethos" unique_id=796233056]
+z_index = 1
+texture_filter = 5
+layout_mode = 0
+offset_left = 79.0
+offset_top = 38.0
+offset_right = 122.0
+offset_bottom = 89.0
+theme = SubResource("Theme_b07mk")
+theme_override_font_sizes/font_size = 10
+text = "10"
+label_settings = ExtResource("5_ssjc6")
+
+[node name="color" type="ColorRect" parent="Ethos" unique_id=915784114]
+layout_mode = 0
+offset_right = 400.0
+offset_bottom = 400.0
+color = Color(0.4509804, 0.02745098, 0.03529412, 1)
+
+[node name="Description" type="TextureRect" parent="." unique_id=999217171]
+clip_children = 1
+texture_filter = 5
+custom_minimum_size = Vector2(456, 576)
+layout_mode = 2
+texture = ExtResource("8_la1lo")
+
+[node name="text" type="RichTextLabel" parent="Description" unique_id=1221896142]
+z_index = 1
+texture_filter = 5
+layout_mode = 0
+offset_left = 90.0
+offset_top = 358.0
+offset_right = 369.0
+offset_bottom = 510.0
+theme = ExtResource("9_1nhx0")
+text = "Test"
+
+[node name="color" type="ColorRect" parent="Description" unique_id=1431050851]
+layout_mode = 0
+offset_right = 422.0
+offset_bottom = 560.0
+color = Color(0, 0, 0, 1)
+
+[node name="Outline1" type="TextureRect" parent="." unique_id=1170151770]
+clip_children = 1
+texture_filter = 5
+custom_minimum_size = Vector2(456, 576)
+layout_mode = 2
+texture = ExtResource("10_5abdo")
+
+[node name="color" type="ColorRect" parent="Outline1" unique_id=153192555]
+layout_mode = 0
+offset_right = 439.0
+offset_bottom = 568.0
+color = Color(0, 0, 0, 1)
+
+[node name="Outline2" type="TextureRect" parent="." unique_id=1690791596]
+visible = false
+clip_children = 1
+texture_filter = 5
+custom_minimum_size = Vector2(456, 576)
+layout_mode = 2
+texture = ExtResource("11_vfr5b")
+
+[node name="color" type="ColorRect" parent="Outline2" unique_id=2005715048]
+layout_mode = 0
+offset_right = 400.0
+offset_bottom = 400.0
+
+[node name="Outline3" type="TextureRect" parent="." unique_id=1277179782]
+visible = false
+clip_children = 1
+texture_filter = 5
+custom_minimum_size = Vector2(456, 576)
+layout_mode = 2
+texture = ExtResource("12_nu4u0")
+
+[node name="color" type="ColorRect" parent="Outline3" unique_id=1216003871]
+layout_mode = 0
+offset_right = 400.0
+offset_bottom = 400.0
+
+[node name="Title1" type="TextureRect" parent="." unique_id=627168048]
+clip_children = 1
+texture_filter = 5
+custom_minimum_size = Vector2(456, 576)
+layout_mode = 2
+texture = ExtResource("13_r14de")
+
+[node name="color" type="ColorRect" parent="Title1" unique_id=1463844725]
+layout_mode = 0
+offset_right = 400.0
+offset_bottom = 400.0
+
+[node name="Title2" type="TextureRect" parent="." unique_id=1182849471]
+clip_children = 1
+texture_filter = 5
+custom_minimum_size = Vector2(456, 576)
+layout_mode = 2
+texture = ExtResource("14_pithx")
+
+[node name="text" type="RichTextLabel" parent="Title2" unique_id=667533257]
+z_index = 1
+texture_filter = 5
+layout_mode = 0
+offset_left = 92.0
+offset_top = 323.0
+offset_right = 365.0
+offset_bottom = 354.0
+focus_mode = 2
+mouse_filter = 1
+theme = ExtResource("9_1nhx0")
+text = "Test"
+fit_content = true
+scroll_active = false
+selection_enabled = true
+language = "en"
+
+[node name="color" type="ColorRect" parent="Title2" unique_id=1555517008]
+texture_filter = 5
+layout_mode = 0
+offset_right = 400.0
+offset_bottom = 400.0
+mouse_filter = 1
+color = Color(0, 0, 0, 1)

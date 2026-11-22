@@ -1,0 +1,9 @@
+[gd_resource type="LabelSettings" format=3 uid="uid://da5uac1vxw5w5"]
+
+[ext_resource type="FontFile" uid="uid://04506ecbe2sk" path="res://assets/fonts/greekbeartinye.ttf" id="1_qwghj"]
+
+[resource]
+font = ExtResource("1_qwghj")
+font_size = 8
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)

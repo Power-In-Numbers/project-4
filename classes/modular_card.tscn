@@ -7,7 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://bqw80mx8sk1on" path="res://assets/cards/modular/Modular_Parts/Circle_1.png" id="3_neej0"]
 [ext_resource type="Texture2D" uid="uid://d2vvd7ejogwhu" path="res://assets/cards/modular/Modular_Parts/Circle_2.png" id="4_74pu2"]
 [ext_resource type="Texture2D" uid="uid://brbm6ieqyvgms" path="res://assets/cards/modular/Modular_Parts/Circle_3.png" id="5_b07mk"]
-[ext_resource type="FontFile" uid="uid://c5lbagoebqd15" path="res://assets/Kenney Pixel.ttf" id="5_neej0"]
+[ext_resource type="FontFile" uid="uid://c5lbagoebqd15" path="res://assets/fonts/Kenney Pixel.ttf" id="5_neej0"]
+[ext_resource type="LabelSettings" uid="uid://da5uac1vxw5w5" path="res://card_pixel.tres" id="6_b07mk"]
 [ext_resource type="Texture2D" uid="uid://cwloyugv12mly" path="res://assets/cards/modular/Modular_Parts/Description.png" id="6_tffxu"]
 [ext_resource type="Texture2D" uid="uid://dfpgnnlbbdqwc" path="res://assets/cards/modular/Modular_Parts/Outline_1.png" id="7_dgwdv"]
 [ext_resource type="Texture2D" uid="uid://cokpnu8mnvxja" path="res://assets/cards/modular/Modular_Parts/Outline_2.png" id="8_pk7bu"]
@@ -15,16 +16,56 @@
 [ext_resource type="Texture2D" uid="uid://nuo0sg46lyp4" path="res://assets/cards/modular/Modular_Parts/Title_1.png" id="10_7hnn5"]
 [ext_resource type="Texture2D" uid="uid://mne4000bq5bo" path="res://assets/cards/modular/Modular_Parts/Title_2.png" id="11_xqsyh"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0swws"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_iipyv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gwl0d"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0hdjc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_aw5cq"]
+
+[sub_resource type="SystemFont" id="SystemFont_i255k"]
+hinting = 0
+subpixel_positioning = 0
+keep_rounding_remainders = false
+multichannel_signed_distance_field = true
+msdf_pixel_range = 32
+msdf_size = 64
+
 [sub_resource type="Theme" id="Theme_b07mk"]
 
-[node name="ModularCard" type="Button" unique_id=647288456]
-offset_right = 8.0
-offset_bottom = 8.0
+[node name="Control" type="Control" unique_id=1668141575]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ModularCard" type="Button" parent="." unique_id=647288456]
+texture_filter = 5
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.187
+anchor_bottom = 0.425
+offset_left = 56.56
+offset_top = 64.125
+offset_right = -55.83989
+offset_bottom = -80.875
+scale = Vector2(2, 2)
+pivot_offset = Vector2(55.735, 63.235)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0swws")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_iipyv")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_gwl0d")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_0hdjc")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_aw5cq")
+action_mode = 0
+button_mask = 3
 script = ExtResource("1_74pu2")
 
-[node name="Background" type="TextureRect" parent="." unique_id=206429713]
+[node name="Background" type="TextureRect" parent="ModularCard" unique_id=206429713]
 clip_children = 1
-texture_filter = 3
+texture_filter = 5
 layout_mode = 0
 offset_left = 3.0
 offset_top = 3.0
@@ -32,16 +73,18 @@ offset_right = 115.0
 offset_bottom = 147.0
 texture = ExtResource("1_cx1ct")
 
-[node name="color" type="ColorRect" parent="Background" unique_id=1892399198]
-texture_filter = 1
+[node name="color" type="ColorRect" parent="ModularCard/Background" unique_id=1892399198]
+texture_filter = 5
 layout_mode = 0
 offset_left = 6.0
 offset_top = -2.0
 offset_right = 109.0
 offset_bottom = 107.0
+mouse_filter = 1
 color = Color(0, 0, 0, 1)
 
-[node name="image" type="TextureRect" parent="Background" unique_id=1494715787]
+[node name="image" type="TextureRect" parent="ModularCard/Background" unique_id=1494715787]
+texture_filter = 5
 layout_mode = 0
 offset_left = 21.0
 offset_top = 9.0
@@ -51,9 +94,9 @@ texture = ExtResource("2_neej0")
 expand_mode = 5
 stretch_mode = 4
 
-[node name="Base" type="TextureRect" parent="." unique_id=716872731]
+[node name="Base" type="TextureRect" parent="ModularCard" unique_id=716872731]
 clip_children = 1
-texture_filter = 3
+texture_filter = 5
 layout_mode = 0
 offset_left = 3.0
 offset_top = 3.0
@@ -61,16 +104,16 @@ offset_right = 115.0
 offset_bottom = 147.0
 texture = ExtResource("2_ygwq0")
 
-[node name="color" type="ColorRect" parent="Base" unique_id=843949297]
+[node name="color" type="ColorRect" parent="ModularCard/Base" unique_id=843949297]
 layout_mode = 0
 offset_left = 15.0
 offset_right = 98.0
 offset_bottom = 137.0
 color = Color(0.60784316, 0.039215688, 0, 1)
 
-[node name="Logos" type="TextureRect" parent="." unique_id=646464313]
+[node name="Logos" type="TextureRect" parent="ModularCard" unique_id=646464313]
 clip_children = 1
-texture_filter = 3
+texture_filter = 5
 layout_mode = 0
 offset_left = 3.0
 offset_top = 3.0
@@ -78,29 +121,30 @@ offset_right = 115.0
 offset_bottom = 147.0
 texture = ExtResource("3_neej0")
 
-[node name="text" type="Label" parent="Logos" unique_id=2054356642]
+[node name="text" type="Label" parent="ModularCard/Logos" unique_id=2054356642]
 z_index = 1
+texture_filter = 5
 layout_mode = 0
-offset_left = 86.0
+offset_left = 84.3675
 offset_top = 10.0
-offset_right = 94.0
-offset_bottom = 19.0
-theme = SubResource("Theme_b07mk")
-theme_override_fonts/font = ExtResource("5_neej0")
-theme_override_font_sizes/font_size = 10
+offset_right = 94.3675
+offset_bottom = 22.0
+theme_override_fonts/font = SubResource("SystemFont_i255k")
+theme_override_font_sizes/font_size = 8
 text = "10"
+label_settings = ExtResource("6_b07mk")
 
-[node name="color" type="ColorRect" parent="Logos" unique_id=770407665]
+[node name="color" type="ColorRect" parent="ModularCard/Logos" unique_id=770407665]
 layout_mode = 0
 offset_left = 77.0
 offset_right = 98.0
 offset_bottom = 39.0
 color = Color(0.105882354, 0.15294118, 0.078431375, 1)
 
-[node name="Circle2" type="TextureRect" parent="." unique_id=560884696]
+[node name="Circle2" type="TextureRect" parent="ModularCard" unique_id=560884696]
 visible = false
 clip_children = 1
-texture_filter = 3
+texture_filter = 5
 layout_mode = 0
 offset_left = 3.0
 offset_top = 3.0
@@ -108,16 +152,16 @@ offset_right = 115.0
 offset_bottom = 147.0
 texture = ExtResource("4_74pu2")
 
-[node name="color" type="ColorRect" parent="Circle2" unique_id=1758328639]
+[node name="color" type="ColorRect" parent="ModularCard/Circle2" unique_id=1758328639]
 layout_mode = 0
 offset_left = 77.0
 offset_right = 98.0
 offset_bottom = 39.0
 color = Color(0.105882354, 0.84705883, 0.078431375, 1)
 
-[node name="Ethos" type="TextureRect" parent="." unique_id=1989176197]
+[node name="Ethos" type="TextureRect" parent="ModularCard" unique_id=1989176197]
 clip_children = 1
-texture_filter = 3
+texture_filter = 5
 layout_mode = 0
 offset_left = 3.0
 offset_top = 3.0
@@ -125,28 +169,29 @@ offset_right = 115.0
 offset_bottom = 147.0
 texture = ExtResource("5_b07mk")
 
-[node name="text" type="Label" parent="Ethos" unique_id=1634863229]
+[node name="text" type="Label" parent="ModularCard/Ethos" unique_id=1634863229]
 z_index = 1
+texture_filter = 5
 layout_mode = 0
-offset_left = 19.0
-offset_top = 10.0
-offset_right = 26.0
-offset_bottom = 20.0
+offset_left = 18.5875
+offset_top = 10.555
+offset_right = 30.3675
+offset_bottom = 22.1175
 theme = SubResource("Theme_b07mk")
-theme_override_fonts/font = ExtResource("5_neej0")
 theme_override_font_sizes/font_size = 10
 text = "10"
+label_settings = ExtResource("6_b07mk")
 
-[node name="color" type="ColorRect" parent="Ethos" unique_id=843784944]
+[node name="color" type="ColorRect" parent="ModularCard/Ethos" unique_id=843784944]
 layout_mode = 0
 offset_left = 14.0
 offset_right = 40.0
 offset_bottom = 40.0
 color = Color(0.4509804, 0.02745098, 0.03529412, 1)
 
-[node name="Description" type="TextureRect" parent="." unique_id=1430582124]
+[node name="Description" type="TextureRect" parent="ModularCard" unique_id=1430582124]
 clip_children = 1
-texture_filter = 3
+texture_filter = 5
 layout_mode = 0
 offset_left = 3.0
 offset_top = 3.0
@@ -154,8 +199,9 @@ offset_right = 115.0
 offset_bottom = 147.0
 texture = ExtResource("6_tffxu")
 
-[node name="text" type="Label" parent="Description" unique_id=990518397]
+[node name="text" type="Label" parent="ModularCard/Description" unique_id=990518397]
 z_index = 1
+texture_filter = 5
 layout_mode = 0
 offset_left = 22.0
 offset_top = 90.0
@@ -165,17 +211,18 @@ theme = SubResource("Theme_b07mk")
 theme_override_fonts/font = ExtResource("5_neej0")
 theme_override_font_sizes/font_size = 10
 text = "Test"
+label_settings = ExtResource("6_b07mk")
 
-[node name="color" type="ColorRect" parent="Description" unique_id=185929813]
+[node name="color" type="ColorRect" parent="ModularCard/Description" unique_id=185929813]
 layout_mode = 0
 offset_left = 14.0
 offset_right = 104.0
 offset_bottom = 140.0
 color = Color(0, 0, 0, 1)
 
-[node name="Outline1" type="TextureRect" parent="." unique_id=115136557]
+[node name="Outline1" type="TextureRect" parent="ModularCard" unique_id=115136557]
 clip_children = 1
-texture_filter = 3
+texture_filter = 5
 layout_mode = 0
 offset_left = 3.0
 offset_top = 3.0
@@ -183,17 +230,17 @@ offset_right = 115.0
 offset_bottom = 147.0
 texture = ExtResource("7_dgwdv")
 
-[node name="color" type="ColorRect" parent="Outline1" unique_id=1420669516]
+[node name="color" type="ColorRect" parent="ModularCard/Outline1" unique_id=1420669516]
 layout_mode = 0
 offset_left = 14.0
 offset_right = 101.0
 offset_bottom = 139.0
 color = Color(0, 0, 0, 1)
 
-[node name="Outline2" type="TextureRect" parent="." unique_id=1069829263]
+[node name="Outline2" type="TextureRect" parent="ModularCard" unique_id=1069829263]
 visible = false
 clip_children = 1
-texture_filter = 3
+texture_filter = 5
 layout_mode = 0
 offset_left = 3.0
 offset_top = 3.0
@@ -201,16 +248,16 @@ offset_right = 115.0
 offset_bottom = 147.0
 texture = ExtResource("8_pk7bu")
 
-[node name="color" type="ColorRect" parent="Outline2" unique_id=199259978]
+[node name="color" type="ColorRect" parent="ModularCard/Outline2" unique_id=199259978]
 layout_mode = 0
 offset_left = 14.0
 offset_right = 101.0
 offset_bottom = 139.0
 
-[node name="Outline3" type="TextureRect" parent="." unique_id=1792242401]
+[node name="Outline3" type="TextureRect" parent="ModularCard" unique_id=1792242401]
 visible = false
 clip_children = 1
-texture_filter = 3
+texture_filter = 5
 layout_mode = 0
 offset_left = 3.0
 offset_top = 3.0
@@ -218,15 +265,15 @@ offset_right = 115.0
 offset_bottom = 147.0
 texture = ExtResource("9_tokvm")
 
-[node name="color" type="ColorRect" parent="Outline3" unique_id=1312960999]
+[node name="color" type="ColorRect" parent="ModularCard/Outline3" unique_id=1312960999]
 layout_mode = 0
 offset_left = 14.0
 offset_right = 101.0
 offset_bottom = 139.0
 
-[node name="Title1" type="TextureRect" parent="." unique_id=2000982703]
+[node name="Title1" type="TextureRect" parent="ModularCard" unique_id=2000982703]
 clip_children = 1
-texture_filter = 3
+texture_filter = 5
 layout_mode = 0
 offset_left = 3.0
 offset_top = 3.0
@@ -234,15 +281,15 @@ offset_right = 115.0
 offset_bottom = 147.0
 texture = ExtResource("10_7hnn5")
 
-[node name="color" type="ColorRect" parent="Title1" unique_id=60054324]
+[node name="color" type="ColorRect" parent="ModularCard/Title1" unique_id=60054324]
 layout_mode = 0
 offset_left = 14.0
 offset_right = 101.0
 offset_bottom = 139.0
 
-[node name="Title2" type="TextureRect" parent="." unique_id=868559534]
+[node name="Title2" type="TextureRect" parent="ModularCard" unique_id=868559534]
 clip_children = 1
-texture_filter = 3
+texture_filter = 5
 layout_mode = 0
 offset_left = 3.0
 offset_top = 3.0
@@ -250,28 +297,33 @@ offset_right = 115.0
 offset_bottom = 147.0
 texture = ExtResource("11_xqsyh")
 
-[node name="text" type="Label" parent="Title2" unique_id=1774737436]
+[node name="text" type="Label" parent="ModularCard/Title2" unique_id=1774737436]
 z_index = 1
+texture_filter = 5
 layout_mode = 0
 offset_left = 23.0
 offset_top = 79.0
 offset_right = 89.0
 offset_bottom = 88.0
+mouse_filter = 1
 theme = SubResource("Theme_b07mk")
 theme_override_fonts/font = ExtResource("5_neej0")
 theme_override_font_sizes/font_size = 10
 text = "Test"
+label_settings = ExtResource("6_b07mk")
 
-[node name="color" type="ColorRect" parent="Title2" unique_id=1559362077]
+[node name="color" type="ColorRect" parent="ModularCard/Title2" unique_id=1559362077]
+texture_filter = 5
 layout_mode = 0
 offset_left = 14.0
 offset_right = 101.0
 offset_bottom = 139.0
+mouse_filter = 1
 color = Color(0, 0, 0, 1)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1947962747]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ModularCard" unique_id=1947962747]
 
-[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
-[connection signal="pressed" from="." to="." method="_on_pressed_m2"]
-[connection signal="pressed" from="." to="." method="_on_pressed_m1"]
+[connection signal="mouse_entered" from="ModularCard" to="ModularCard" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="ModularCard" to="ModularCard" method="_on_mouse_exited"]
+[connection signal="pressed" from="ModularCard" to="ModularCard" method="_on_pressed_m1"]
+[connection signal="pressed" from="ModularCard" to="ModularCard" method="_on_pressed_m2"]

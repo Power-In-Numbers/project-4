@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://dtacsjdgvlfw8"]
+
+[ext_resource type="PackedScene" uid="uid://cim7qwe6c4mdl" path="res://classes/modular_card.tscn" id="1_o5noy"]
+
+[node name="DebugScene" type="Node2D" unique_id=1782937854]
+
+[node name="Control" parent="." unique_id=1668141575 instance=ExtResource("1_o5noy")]
