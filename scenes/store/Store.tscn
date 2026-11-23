@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://dlxpuixapp7tu"]
+
+[ext_resource type="Texture2D" path="res://assets/backgrounds/campus_store.jpg" id="1_ofvb5"]
+
+[node name="StoreRoot" type="Node2D" unique_id=2132149539]
+
+[node name="CampusStore" type="Sprite2D" parent="." unique_id=215457316]
+position = Vector2(604.50006, 338.75003)
+scale = Vector2(2.3120155, 1.7635661)
+texture = ExtResource("1_ofvb5")

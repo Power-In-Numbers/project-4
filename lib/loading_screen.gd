@@ -14,7 +14,8 @@ func play_animation() -> void:
 
 func _on_progress_changed(_new_value: float) -> void:
 	print(_new_value)
-	$progress.value = _new_value
+	if _new_value > $progress.value:
+		$progress.value = _new_value
 
 func _on_load_finished() -> void:
 	animation_player.play_backwards("trans")

@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://bltds3v4dhmj4"]
+
+[ext_resource type="Texture2D" uid="uid://dvfwg21pjt12j" path="res://assets/New folder/recycle_cards.png" id="1_nh5f1"]
+[ext_resource type="PackedScene" uid="uid://cgh7u45ip0dor" path="res://assets/3dassets/trash.glb" id="2_5kpgb"]
+
+[node name="RecycleStation" type="Node2D" unique_id=240692074]
+
+[node name="RecycleCards" type="Sprite2D" parent="." unique_id=1780015217]
+position = Vector2(555, 438.99997)
+scale = Vector2(0.44998512, 0.4273908)
+texture = ExtResource("1_nh5f1")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=1573877798]
+offset_right = 495.0
+offset_bottom = 501.0
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=367703130]
+handle_input_locally = false
+render_target_update_mode = 4
+
+[node name="trash2" parent="SubViewportContainer/SubViewport" unique_id=2016908948 instance=ExtResource("2_5kpgb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.13157386, 0, -0.0096978545)
+
+[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport" unique_id=2121034326]
+transform = Transform3D(-0.98934484, 0, -0.14559136, 0, 1, 0, 0.14559136, 0, -0.98934484, 0.07584408, 0.28511757, -0.6619673)

@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://byp0c1omj4o0d"]
+
+[ext_resource type="PackedScene" uid="uid://cgh7u45ip0dor" path="res://assets/3dassets/trash.glb" id="1_kfhkg"]
+
+[node name="trash2" unique_id=2016908948 instance=ExtResource("1_kfhkg")]

@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://fimrp6vdufc"]
+
+[ext_resource type="PackedScene" uid="uid://cgh7u45ip0dor" path="res://assets/3dassets/trash.glb" id="1_8gg3h"]
+[ext_resource type="ArrayMesh" uid="uid://bhxapiugsoemt" path="res://trash.tres" id="2_8gg3h"]
+[ext_resource type="Texture2D" uid="uid://b2wpil0d77dvm" path="res://assets/New folder/recycle_cards_1.png" id="3_eoh5a"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0hdjc"]
+albedo_color = Color(1, 1, 1, 0)
+albedo_texture = ExtResource("3_eoh5a")
+uv1_offset = Vector3(0.32, 0, 0)
+
+[sub_resource type="SphereMesh" id="SphereMesh_iipyv"]
+material = SubResource("StandardMaterial3D_0hdjc")
+radius = 0.1
+height = 0.001
+radial_segments = 4
+
+[node name="trash2" unique_id=2016908948 instance=ExtResource("1_8gg3h")]
+
+[node name="trash" parent="." index="0" unique_id=1155557943]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.21416527, 0.090007365)
+mesh = ExtResource("2_8gg3h")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="1" unique_id=644997806]
+transform = Transform3D(-0.72966444, 0.05758282, -0.6813765, 0.6790898, -0.05579884, -0.7319312, -0.080166705, -0.99678016, 0.0016105162, 0.0041696583, 0.34223658, -0.19816656)
+mesh = SubResource("SphereMesh_iipyv")
