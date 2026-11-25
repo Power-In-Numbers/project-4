@@ -1,25 +1,43 @@
 [gd_scene format=3 uid="uid://bltds3v4dhmj4"]
 
-[ext_resource type="Texture2D" uid="uid://dvfwg21pjt12j" path="res://assets/New folder/recycle_cards.png" id="1_nh5f1"]
+[ext_resource type="Texture2D" uid="uid://djhcjfdr35juu" path="res://assets/New folder/shelves_store.jpg" id="1_5kpgb"]
 [ext_resource type="PackedScene" uid="uid://cgh7u45ip0dor" path="res://assets/3dassets/trash.glb" id="2_5kpgb"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_q6ml5"]
 
 [node name="RecycleStation" type="Node2D" unique_id=240692074]
 
-[node name="RecycleCards" type="Sprite2D" parent="." unique_id=1780015217]
-position = Vector2(555, 438.99997)
-scale = Vector2(0.44998512, 0.4273908)
-texture = ExtResource("1_nh5f1")
+[node name="ShelvesStore" type="Sprite2D" parent="." unique_id=332958910]
+z_index = 1
+position = Vector2(598.1445, 254.50003)
+scale = Vector2(2.3327732, 2.1576228)
+texture = ExtResource("1_5kpgb")
 
-[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=1573877798]
-offset_right = 495.0
-offset_bottom = 501.0
+[node name="Area2D" type="Area2D" parent="." unique_id=1735003824]
 
-[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=367703130]
-handle_input_locally = false
-render_target_update_mode = 4
+[node name="SubViewportContainer" type="SubViewportContainer" parent="Area2D" unique_id=1573877798]
+z_index = 10
+offset_left = 304.0
+offset_top = 111.0
+offset_right = 1507.0
+offset_bottom = 800.0
 
-[node name="trash2" parent="SubViewportContainer/SubViewport" unique_id=2016908948 instance=ExtResource("2_5kpgb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.13157386, 0, -0.0096978545)
+[node name="SubViewport" type="SubViewport" parent="Area2D/SubViewportContainer" unique_id=367703130]
+transparent_bg = true
+size = Vector2i(1184, 669)
 
-[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport" unique_id=2121034326]
-transform = Transform3D(-0.98934484, 0, -0.14559136, 0, 1, 0, 0.14559136, 0, -0.98934484, 0.07584408, 0.28511757, -0.6619673)
+[node name="trash2" parent="Area2D/SubViewportContainer/SubViewport" unique_id=2016908948 instance=ExtResource("2_5kpgb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.13157386, 0.974054, -0.0096978545)
+
+[node name="Camera3D" type="Camera3D" parent="Area2D/SubViewportContainer/SubViewport" unique_id=2121034326]
+transform = Transform3D(-0.99995834, 0, -0.009125024, 0, 1, 0, 0.009125024, 0, -0.99995834, 0.07584408, 1.2671025, -0.74252427)
+projection = 1
+
+[node name="DirectionalLight3D" type="SpotLight3D" parent="Area2D/SubViewportContainer/SubViewport" unique_id=498100969]
+transform = Transform3D(1, 0, 0, 0, -0.7071068, 0.7071067, 0, -0.7071067, -0.7071068, 0.79999447, 3.307275, -1.7762338)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=953624261]
+shape = SubResource("CircleShape2D_q6ml5")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=43758902]
+position = Vector2(591, 334)

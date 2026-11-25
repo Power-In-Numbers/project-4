@@ -22,5 +22,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.21416527, 0.090007365)
 mesh = ExtResource("2_8gg3h")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." index="1" unique_id=644997806]
-transform = Transform3D(-0.72966444, 0.05758282, -0.6813765, 0.6790898, -0.05579884, -0.7319312, -0.080166705, -0.99678016, 0.0016105162, 0.0041696583, 0.34223658, -0.19816656)
+transform = Transform3D(-0.72966444, 0.05758282, -0.6813765, 0.6790898, -0.05579884, -0.7319312, -0.080166705, -0.99678016, 0.0016105162, 0.092887655, 0.34933156, -0.19007552)
+visible = false
 mesh = SubResource("SphereMesh_iipyv")
